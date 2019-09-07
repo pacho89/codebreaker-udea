@@ -80,9 +80,4 @@ describe('CodeBreaker', function() {
     let result = CodeBreaker.guess('1e23');
     assert.equal('ERROR',result);
   });
-  ///////
-  it('should return ERROR  if the e character is  sended', function() {
-    let result = CodeBreaker.guess('1e23');
-    assert.equal('SORRY',result);
-  });
 });
