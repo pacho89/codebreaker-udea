@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/nyc/bin/nyc.js ./node_modules/mocha/bin/mocha --reporter spec test/**/*.js",
+    "coverage": "./node_modules/nyc/bin/nyc.js report --reporter=text-lcov > coverage.lcov && ./node_modules/codecov/bin/codecov -t 21f1ea2d-1d97-461c-87bd-64b1ab80083d",
+    "codacy-coverage": "./node_modules/nyc/bin/nyc.js report --reporter=lcov --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage && rm -rf ./coverage",
     "start": "node server.js"
   },
   "author": "",
